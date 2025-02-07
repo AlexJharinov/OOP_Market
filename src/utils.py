@@ -6,6 +6,7 @@ from src.product_class import Product
 
 
 def read_json(path: str) -> dict:
+    """Функция открывыет json-файл"""
     full_path = os.path.abspath(path)
     with open(full_path, "r", encoding="UTF-8") as f:
         data = json.load(f)
@@ -13,6 +14,7 @@ def read_json(path: str) -> dict:
 
 
 def creat_objects(data):
+    """Функция записи новой информации из json-файла"""
     category_list = []
     for cat in data:
         prod = []
