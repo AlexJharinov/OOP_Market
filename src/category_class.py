@@ -1,5 +1,3 @@
-
-
 class Category:
     """Класс для работы с категориями"""
 
@@ -9,7 +7,6 @@ class Category:
     name = str
     description = str
     products = list
-
 
     def __init__(self, name, description, products):
         """Функция инициализации категории"""

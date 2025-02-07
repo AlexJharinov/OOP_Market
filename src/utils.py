@@ -1,17 +1,16 @@
 import os
 import json
 
-from unicodedata import category
-
 from src.category_class import Category
 from src.product_class import Product
 
 
 def read_json(path: str) -> dict:
     full_path = os.path.abspath(path)
-    with open(full_path, 'r', encoding="UTF-8") as f:
+    with open(full_path, "r", encoding="UTF-8") as f:
         data = json.load(f)
     return data
+
 
 def creat_objects(data):
     category_list = []
@@ -23,6 +22,7 @@ def creat_objects(data):
         category_list.append(Category(**cat))
 
     return category_list
+
 
 if __name__ == "__main__":
     prod_and_cat = read_json("../data/products.json")
