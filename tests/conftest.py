@@ -40,3 +40,11 @@ def product():
 @pytest.fixture
 def for_test_new_product():
     return Product("Просто пион", "Подарок подруге", 122.0, 3)
+
+@pytest.fixture
+def one_category():
+    product1 = Product("a", "b", 1.0, 1)
+    product2 = Product("c", "d", 2.0, 2)
+    product3 = Product("e", "f", 3.0, 3)
+    category = Category("abc", "def", [product1, product2, product3])
+    return category

@@ -34,6 +34,14 @@ class Category:
         else:
             raise TypeError
 
+    def __str__(self):
+        """ Возвращает имя категории и колличество продуктов """
+
+        amount = 0
+        for i in self.__products:
+            amount += i.quantity
+
+        return f"{self.name}, колличество продуктов: {amount}"
 
 
 

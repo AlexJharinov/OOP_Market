@@ -1,7 +1,7 @@
 import pytest
 from src.category_class import Category
 
-from src.product_class import Product
+
 
 
 def test_category_class(first_cat, second_cat):
@@ -21,4 +21,7 @@ def test_add_product(product, for_test_new_product):
 def test_invalid_add_product():
     with pytest.raises(TypeError):
         Category.add_product("Что-то не то")
+
+
+
 

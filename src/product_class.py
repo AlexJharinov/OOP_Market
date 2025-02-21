@@ -41,6 +41,13 @@ class Product:
 
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
+    def __add__(self, other):
+        """ Возвращает сумму продуктов """
+
+        if type(other) is self.__class__:
+            return (self.__price * self.quantity +
+                    other.__price * other.quantity)
+
 
 
 
