@@ -15,12 +15,19 @@ def test_category_class(first_cat, second_cat):
 
 
 def test_add_product(product, for_test_new_product):
-    assert product + for_test_new_product == 137.3
+    assert product + for_test_new_product == 411.9
 
 
 def test_invalid_add_product():
     with pytest.raises(TypeError):
         Category.add_product("Что-то не то")
+
+def test_str_category(one_category):
+    assert str(one_category) == "abc, колличество продуктов: 6"
+
+
+
+
 
 
 

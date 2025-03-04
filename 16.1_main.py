@@ -1,5 +1,5 @@
 
-from src.product_class import Product
+from src.product_class import LawnGrass, Smartphone
 
 from src.category_class import Category
 
