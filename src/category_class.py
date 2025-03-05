@@ -1,6 +1,4 @@
-
 from src.product_class import Product
-
 
 
 class Category:
@@ -23,10 +21,8 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
-
-
     def add_product(self, product: Product):
-        """ Метод добавляющий новый продукт """
+        """Метод добавляющий новый продукт"""
 
         if isinstance(product, Product):
             self.__products.append(product)
@@ -35,15 +31,10 @@ class Category:
             raise TypeError
 
     def __str__(self):
-        """ Возвращает имя категории и колличество продуктов """
+        """Возвращает имя категории и колличество продуктов"""
 
         amount = 0
         for i in self.__products:
             amount += i.quantity
 
         return f"{self.name}, колличество продуктов: {amount}"
-
-
-
-
-
