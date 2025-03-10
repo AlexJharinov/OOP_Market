@@ -3,10 +3,10 @@ from src.print_mixin import MixinLog
 
 
 class Product(MixinLog, BaseProduct):
-    name = str
-    description = str
-    price = float
-    quantity = int
+    name: str
+    description: str
+    price: float
+    quantity: int
 
     def __init__(self, name, description, price, quantity):
         self.name = name
