@@ -1,14 +1,19 @@
-class Product:
-    name = str
-    description = str
-    price = float
-    quantity = int
+from src.base_product import BaseProduct
+from src.print_mixin import MixinLog
+
+
+class Product(MixinLog, BaseProduct):
+    name: str
+    description: str
+    price: float
+    quantity: int
 
     def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     @classmethod
     def new_product(cls, new_element):

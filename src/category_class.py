@@ -7,9 +7,9 @@ class Category:
     category_count = 0
     product_count = 0
 
-    name = str
-    description = str
-    products = list
+    name: str
+    description: str
+    products: list
 
     def __init__(self, name, description, products):
         """Функция инициализации категории"""
@@ -29,6 +29,17 @@ class Category:
             Category.product_count += 1
         else:
             raise TypeError
+
+    @property
+    def products(self):
+
+        """ Возвращает строку с описанием всех продуктов в категории """
+        product_str = ""
+        for element in self.__products:
+            product_str += \
+                f"""{element.name}, {element.description},
+    {element.price} руб. Остаток: {element.quantity} шт.\n"""
+        return product_str
 
     def __str__(self):
         """Возвращает имя категории и колличество продуктов"""
