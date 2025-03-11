@@ -49,3 +49,16 @@ class Category:
             amount += i.quantity
 
         return f"{self.name}, колличество продуктов: {amount}"
+
+    def middle_price(self):
+        """ Метод, высчитывающий средний ценник всех товаров """
+
+        try:
+            total_cost = 0
+            for product in self.__products:
+                total_cost += product.price * product.quantity
+            return round(total_cost / sum([product.quantity for
+                                           product in self.__products]), 2)
+
+        except ZeroDivisionError:
+            return 0

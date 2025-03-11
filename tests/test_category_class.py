@@ -2,8 +2,6 @@ import pytest
 from src.category_class import Category
 
 
-
-
 def test_category_class(first_cat, second_cat):
     assert second_cat.name == "Не хлеб"
     assert second_cat.description == "Все кроме хлеба"
@@ -24,6 +22,16 @@ def test_invalid_add_product():
 
 def test_str_category(one_category):
     assert str(one_category) == "abc, колличество продуктов: 6"
+
+
+
+def test_middle_price(one_category):
+    assert one_category.middle_price() == 2.33
+
+
+def test_error_middle_price():
+    with pytest.raises(ZeroDivisionError):
+        raise ZeroDivisionError
 
 
 
