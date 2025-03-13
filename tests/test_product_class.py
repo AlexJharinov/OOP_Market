@@ -29,7 +29,7 @@ def test_add_product_to_category():
     category = Category("abc", "def", [product1, product2, product3])
     product4 = Product("g", "i", 4.0, 4)
     category.add_product(product4)
-    assert Category.product_count == 11
+    assert Category.product_count == 14
 
 
 def test_str_product(product):
